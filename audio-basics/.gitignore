@@ -1,0 +1,13 @@
+*.hxproj
+
+.vscode/
+*.code-workspace
+
+bin/
+dist/
+
+lib/
+lib-esm/
+node_modules/
+
+.DS_Store
