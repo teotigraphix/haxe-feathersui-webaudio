@@ -16,6 +16,7 @@
 // Author: Michael Schmalle - https://teotigraphix.com
 // teotigraphixllc at gmail dot com
 ////////////////////////////////////////////////////////////////////////////////
+import feathers.skins.ProgrammaticSkin;
 import feathers.controls.Alert;
 import feathers.controls.Application;
 import feathers.controls.AssetLoader;
@@ -464,6 +465,14 @@ class SpeakerComponent extends FeathersControl {
 	override function update() {
 		super.update();
 
+		var sizeInvalid = isInvalid(SIZE);
+
+		if (sizeInvalid) {
+			drawBackground();
+		}
+	}
+
+	private function drawBackground():Void {
 		graphics.clear();
 
 		var padding:Float = 42;
@@ -542,11 +551,19 @@ class EightTrackComponent extends FeathersControl {
 	override function update() {
 		super.update();
 
-		if (_playControl != null) {
-			_playControl.validateNow();
-			_playControl.move((actualWidth - _playControl.width) / 2, actualHeight - _playControl.height - 20);
-		}
+		var sizeInvalid = isInvalid(SIZE);
 
+		if (sizeInvalid) {
+			drawBackground();
+
+			if (_playControl != null) {
+				_playControl.validateNow();
+				_playControl.move((actualWidth - _playControl.width) / 2, actualHeight - _playControl.height - 20);
+			}
+		}
+	}
+
+	private function drawBackground():Void {
 		graphics.clear();
 
 		// Background
@@ -581,7 +598,7 @@ class EightTrackComponent extends FeathersControl {
 	}
 }
 
-class PowerButtonSkin extends BaseGraphicsPathSkin {
+class PowerButtonSkin extends ProgrammaticSkin {
 	public function new() {
 		super();
 
@@ -631,8 +648,6 @@ class PlayButtonSkin extends BaseGraphicsPathSkin {
 	}
 
 	override function drawPath() {
-		super.drawPath();
-
 		// Triangle
 		graphics.moveTo(0, 0);
 		graphics.lineTo(actualWidth, actualHeight / 2);
@@ -640,14 +655,12 @@ class PlayButtonSkin extends BaseGraphicsPathSkin {
 	}
 }
 
-class HandleSkin extends BaseGraphicsPathSkin {
+class HandleSkin extends ProgrammaticSkin {
 	public function new() {
 		super();
 	}
 
 	override function update() {
-		super.update();
-
 		graphics.clear();
 
 		var padding:Float = 50;
