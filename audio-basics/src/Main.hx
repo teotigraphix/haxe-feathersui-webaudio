@@ -50,7 +50,7 @@ import openfl.net.URLRequest;
 
 // Editors Note:
 //   This is not how I would write an 'app' with these frameworks, purely demonstration.
-//   The ComponentFactrory serves as a Theme basically, and the constants are for ease
+//   The ComponentFactory serves as a Theme basically, and the constants are for ease
 //   of demonstration.
 
 /**
