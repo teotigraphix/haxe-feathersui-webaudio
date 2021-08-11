@@ -309,10 +309,8 @@ class Main extends Application {
 
 		if (value) {
 			_soundEngine.play();
-			// playControl.text = "PAUSE";
 		} else {
 			_soundEngine.pause();
-			// playControl.text = "PLAY";
 		}
 	}
 
@@ -479,7 +477,7 @@ class SpeakerComponent extends FeathersControl {
 		centerX = ((actualWidth) / 2);
 		centerY = ((actualHeight) / 2);
 
-		// centerY = Min(centerY, )
+		// Background
 		graphics.lineStyle(10, ComponentFactory.blackColor, 1);
 		graphics.beginFill(ComponentFactory.darkBlueColor, 1.0);
 		graphics.drawRect(0, 0, actualWidth, actualHeight);
@@ -551,6 +549,7 @@ class EightTrackComponent extends FeathersControl {
 
 		graphics.clear();
 
+		// Background
 		graphics.lineStyle(10, ComponentFactory.blackColor);
 		graphics.beginFill(ComponentFactory.darkBlueColor, 1.0);
 		graphics.drawRect(0, 0, actualWidth, actualHeight);
@@ -560,7 +559,8 @@ class EightTrackComponent extends FeathersControl {
 		var rectWidth:Float = actualWidth - (padding * 2);
 		var rectHeight:Float = actualHeight / 3;
 
-		var radius = rectHeight; // / 2;
+		// 8Track Player
+		var radius = rectHeight;
 		graphics.lineStyle(14, ComponentFactory.blackColor);
 		graphics.beginFill(ComponentFactory.orangeColor, 1.0);
 		graphics.drawRoundRect(padding, rectHeight, rectWidth, rectHeight, radius);
@@ -633,6 +633,7 @@ class PlayButtonSkin extends BaseGraphicsPathSkin {
 	override function drawPath() {
 		super.drawPath();
 
+		// Triangle
 		graphics.moveTo(0, 0);
 		graphics.lineTo(actualWidth, actualHeight / 2);
 		graphics.lineTo(0, actualHeight);
@@ -653,11 +654,13 @@ class HandleSkin extends BaseGraphicsPathSkin {
 		var halfHeight:Float = actualHeight / 2;
 		var contentWidth:Float = (actualWidth - (padding * 2));
 
+		// Handle
 		graphics.lineStyle(10, 1);
 		graphics.beginFill(ComponentFactory.orangeColor, 1);
 		graphics.drawRect(padding, 0, contentWidth, halfHeight);
 		graphics.endFill();
 
+		// Hole
 		graphics.lineStyle(10, 1);
 		graphics.beginFill(ComponentFactory.backgroundColor, 1);
 		graphics.drawRect(padding, halfHeight, contentWidth, halfHeight);
