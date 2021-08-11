@@ -58,7 +58,7 @@ class Main extends Application {
 	//-----------------------------------------------------------------------------
 	private var _soundEngine:SoundEngine;
 
-	private var _soundFile:String = "/assets/audio/audio-basics_outfoxing.mp3";
+	private var _soundFile:String = "assets/audio/audio-basics_outfoxing.mp3";
 
 	//-----------------------------------------------------------------------------
 	// UI Control :: Variables
