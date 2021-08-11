@@ -1,5 +1,3 @@
-This project was bootstrapped with [Feathers UI](https://feathersui.com/learn/haxe-openfl/).
-
 # Haxe > OpenFL > FeathersUI > WebAudio :: Audio Basics
 
 _Example Credit_:
@@ -40,7 +38,7 @@ Check out the following tutorials for creating Feathers UI projects in popular d
 - [Visual Studio Code](https://feathersui.com/learn/haxe-openfl/visual-studio-code/)
 
 
-The sample app demostrates the follwing;
+The sample app demonstrates the following;
 
   * Simple `SoundEngine` abstraction for **WebAudio** node graph **media player**.
   * UI controls for **Play**, **Volume**, **Pan** and **Power**.
