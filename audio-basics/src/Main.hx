@@ -16,6 +16,7 @@
 // Author: Michael Schmalle, Principal Architect
 // teotigraphixllc at gmail dot com
 ////////////////////////////////////////////////////////////////////////////////
+import feathers.controls.Alert;
 import feathers.controls.Application;
 import feathers.controls.AssetLoader;
 import feathers.controls.HSlider;
@@ -47,7 +48,7 @@ import openfl.events.MouseEvent;
 import openfl.net.URLRequest;
 
 /**
-	Translation from with love;
+	Translated with love;
 	@see https://mdn.github.io/webaudio-examples/audio-basics/
 	@see https://github.com/mdn/webaudio-examples/tree/master/audio-basics
  */
@@ -240,7 +241,6 @@ class Main extends Application {
 	}
 
 	private function layoutLandscape():Void {
-		trace("layoutLandscape()");
 		isLandscape = true;
 
 		controlsSection.removeChildren();
@@ -276,29 +276,26 @@ class Main extends Application {
 	}
 
 	private function layoutPortrait():Void {
-		trace("layoutPortrait()");
 		isLandscape = false;
 
 		controlsSection.removeChildren();
 		componentsSection.removeChildren();
 
+		// Controls
 		controlsSection.addChild(volumeLabel);
 		controlsSection.addChild(volumeControl);
 		controlsSection.addChild(panLabel);
 		controlsSection.addChild(panControl);
 		controlsSection.addChild(powerControl);
 
+		// Components
 		componentsSection.addChild(eightTrack);
 		componentsSection.addChild(speakerLeft);
 
 		speakerLeft.layoutData = new VerticalLayoutData(100, 100);
 		eightTrack.layoutData = new VerticalLayoutData(100, 100);
 
-		// Controls
-
-		// Components
 		var vl:VerticalLayout = new VerticalLayout();
-
 		componentsSection.layoutData = new VerticalLayoutData(100, 100);
 		componentsSection.layout = vl;
 	}
@@ -319,12 +316,10 @@ class Main extends Application {
 		}
 	}
 
-	/** */
 	private function setPan(value:Float):Void {
 		_soundEngine.pan = value;
 	}
 
-	/** */
 	private function setGain(value:Float):Void {
 		_soundEngine.gain = value;
 	}
@@ -351,7 +346,9 @@ class Main extends Application {
 		var button = cast(event.currentTarget, ToggleButton);
 		trace('powerControl.selected change: ${button.selected}');
 
-		_soundEngine.powered = false;
+		// TODO _soundEngine.powered = false;
+		var buttons:Array<String> = ["OK"];
+		Alert.show("Zero Point energy!", "Warning:: Living off Fossil Fuels!", buttons);
 	}
 
 	private function playControl_changeHandler(event:Event):Void {
@@ -714,7 +711,14 @@ class SoundEngine {
 		if (_powered == value)
 			return _powered;
 		_powered = value;
-		_audioElement.muted = !_powered;
+		if (_powered) {
+			// N/A could fire signal for UI to update look, etc.
+		} else {
+			// fake the power unit until zero point energy comes along ;-)
+			_audioElement.pause();
+			_audioElement.fastSeek(0.0);
+		}
+
 		return _powered;
 	}
 
