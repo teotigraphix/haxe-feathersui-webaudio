@@ -13,7 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License
 //
-// Author: Michael Schmalle, Principal Architect
+// Author: Michael Schmalle - https://teotigraphix.com
 // teotigraphixllc at gmail dot com
 ////////////////////////////////////////////////////////////////////////////////
 import feathers.controls.Alert;
@@ -372,6 +372,7 @@ class ComponentFactory {
 	public static var COMPONENTS_HEIGHT:Float = 200.0;
 
 	public static var orangeColor:Int = 0xFF8800;
+	public static var greenColor:Int = 0x00FF00;
 	public static var lightBlueColor:Int = 0x1CC4FD;
 	public static var darkBlueColor:Int = 0x1481F5;
 	public static var blackColor:Int = 0x000000;
@@ -386,8 +387,8 @@ class ComponentFactory {
 		skin.fill = SolidColor(ComponentFactory.blackColor);
 
 		var selectedSkin = new PlayButtonSkin();
-		selectedSkin.border = SolidColor(12, ComponentFactory.orangeColor, 1, false, LineScaleMode.NORMAL, ROUND);
-		selectedSkin.fill = SolidColor(ComponentFactory.orangeColor, 1.0);
+		selectedSkin.border = SolidColor(8, ComponentFactory.blackColor, 1, false, LineScaleMode.NORMAL, ROUND);
+		selectedSkin.fill = SolidColor(ComponentFactory.greenColor, 1.0);
 
 		button.backgroundSkin = skin;
 		button.selectedBackgroundSkin = selectedSkin;
@@ -550,8 +551,8 @@ class EightTrackComponent extends FeathersControl {
 
 		graphics.clear();
 
-		graphics.lineStyle(10, 0x000000);
-		graphics.beginFill(0x1481F5, 1.0);
+		graphics.lineStyle(10, ComponentFactory.blackColor);
+		graphics.beginFill(ComponentFactory.darkBlueColor, 1.0);
 		graphics.drawRect(0, 0, actualWidth, actualHeight);
 		graphics.endFill();
 
@@ -560,21 +561,21 @@ class EightTrackComponent extends FeathersControl {
 		var rectHeight:Float = actualHeight / 3;
 
 		var radius = rectHeight; // / 2;
-		graphics.lineStyle(14, 0x000000);
-		graphics.beginFill(0xFF8800, 1.0);
+		graphics.lineStyle(14, ComponentFactory.blackColor);
+		graphics.beginFill(ComponentFactory.orangeColor, 1.0);
 		graphics.drawRoundRect(padding, rectHeight, rectWidth, rectHeight, radius);
 		graphics.endFill();
 
 		var radius = rectHeight / 4;
 		// Circle Left
-		graphics.lineStyle(8, 0x000000);
-		graphics.beginFill(0x1481F5, 1.0);
+		graphics.lineStyle(8, ComponentFactory.blackColor);
+		graphics.beginFill(ComponentFactory.darkBlueColor, 1.0);
 		graphics.drawCircle(padding + padding + radius, rectHeight + (rectHeight / 2), radius);
 		graphics.endFill();
 
 		// Circle Right
-		graphics.lineStyle(8, 0x000000);
-		graphics.beginFill(0x1481F5, 1.0);
+		graphics.lineStyle(8, ComponentFactory.blackColor);
+		graphics.beginFill(ComponentFactory.darkBlueColor, 1.0);
 		graphics.drawCircle(actualWidth - (padding + padding + radius), rectHeight + (rectHeight / 2), radius);
 		graphics.endFill();
 	}
@@ -598,7 +599,7 @@ class PowerButtonSkin extends BaseGraphicsPathSkin {
 		var radius = actualHeight / 2;
 
 		// Outer Circle
-		graphics.lineStyle(8, 0x000000, 1);
+		graphics.lineStyle(8, ComponentFactory.blackColor, 1);
 		graphics.beginFill(ComponentFactory.orangeColor, 1.0);
 		graphics.drawCircle(centerX, centerY, radius);
 		graphics.endFill();
@@ -615,7 +616,7 @@ class PowerButtonSkin extends BaseGraphicsPathSkin {
 		graphics.lineTo(centerX, 16);
 
 		// Vertical ink
-		graphics.lineStyle(8, 0x000000, 1, false, LineScaleMode.NORMAL, ROUND);
+		graphics.lineStyle(8, ComponentFactory.blackColor, 1, false, LineScaleMode.NORMAL, ROUND);
 		graphics.moveTo(centerX, centerY);
 		graphics.lineTo(centerX, 16);
 	}
@@ -632,8 +633,6 @@ class PlayButtonSkin extends BaseGraphicsPathSkin {
 	override function drawPath() {
 		super.drawPath();
 
-		// graphics.beginFill(fill, 1);
-		// graphics.lineStyle(12, 0x000000, 1, false, LineScaleMode.NORMAL, ROUND);
 		graphics.moveTo(0, 0);
 		graphics.lineTo(actualWidth, actualHeight / 2);
 		graphics.lineTo(0, actualHeight);
@@ -699,7 +698,7 @@ class SoundEngine {
 	private var _powered:Bool;
 
 	/**
-		Doc `powered`.
+		Turn the power on and off. Not Implemented.
 	 */
 	public var powered(get, set):Bool;
 
@@ -779,7 +778,7 @@ class SoundEngine {
 	// API :: Methods
 	//-----------------------------------------------------------------------------
 
-	/** */
+	/** Initialize the AudioContext and audio node graph now that user interaction has occured. */
 	public function userInitialize():Void {
 		_audioContext = new AudioContext();
 		_audioElement = createAudioElement(_soundFile);
@@ -795,12 +794,12 @@ class SoundEngine {
 		audioSource.connect(_gainNode).connect(_panNode).connect(_audioContext.destination);
 	}
 
-	/** */
+	/** Play the media engine. */
 	public function play():Void {
 		_audioElement.play();
 	}
 
-	/** */
+	/** Pause the media engine. */
 	public function pause():Void {
 		_audioElement.pause();
 	}
