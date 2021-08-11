@@ -10,6 +10,8 @@ _Example Credit_:
 
 A build of the [_audio-basics_ sample](https://teotigraphix.com/io/web-audio/audio-basics) is hosted on the TeotiGraphix, LLC website, and it may be viewed in any modern web browser.
 
+![Audio Basics](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/audio-basics/docs/screenshots/webaudio-audio-basics.png)
+  
 ## Run locally
 
 This project includes an project.xml file that configures all options for OpenFL. This file makes it easy to build from the command line, and many IDEs can parse this file to configure a Haxe project to use OpenFL.
