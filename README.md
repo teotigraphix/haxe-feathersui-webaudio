@@ -14,4 +14,6 @@ _Example Credit_:
 
   * [Audio Basics](https://github.com/teotigraphix/haxe-feathersui-webaudio/tree/main/audio-basics) - Simple boombox with a playing mp3, volume, pan and play control.
   
-  ![Audio Basics](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/audio-basics/docs/screenshots/webaudio-audio-basics.png)
+![Audio Basics](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/audio-basics/docs/screenshots/webaudio-audio-basics.png)
+
+
