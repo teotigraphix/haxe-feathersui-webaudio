@@ -2,8 +2,9 @@ This project was bootstrapped with [Feathers UI](https://feathersui.com/learn/ha
 
 # Haxe > OpenFL > FeathersUI > WebAudio :: Audio Basics
 
-_Credit_ - https://mdn.github.io/webaudio-examples/audio-basics/
-https://github.com/mdn/webaudio-examples/tree/master/audio-basics
+_Example Credit_:
+  * https://mdn.github.io/webaudio-examples/audio-basics/
+  * https://github.com/mdn/webaudio-examples/audio-basics
 
 ## Live demo
 
