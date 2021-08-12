@@ -188,7 +188,7 @@ class Main extends Application {
 		volumeControl.layoutData = new HorizontalLayoutData(100.0, 100.0);
 		volumeControl.addEventListener(Event.CHANGE, volumeControl_changeHandler);
 
-		panControl = ComponentFactory.createVolumeSlider();
+		panControl = ComponentFactory.createPanSlider();
 		panControl.layoutData = new HorizontalLayoutData(100.0, 100.0);
 		panControl.addEventListener(Event.CHANGE, panControl_changeHandler);
 
