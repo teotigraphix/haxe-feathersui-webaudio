@@ -1,12 +1,10 @@
-This project was bootstrapped with [Feathers UI](https://feathersui.com/learn/haxe-openfl/).
-
 # Haxe > OpenFL > FeathersUI > WebAudio
 
 _Example Credit_:
   * https://mdn.github.io/webaudio-examples/
   * https://github.com/mdn/webaudio-examples/
 
-  The `haxe-feathersui-webaudio` repository contains many **WebAudio** examples/experiments using the `Haxe` > `OpenFL` > `FeathersUI` toolchain to create fun audio apps in the borwser!
+  The `haxe-feathersui-webaudio` repository contains many **WebAudio** examples/experiments using the `Haxe` > `OpenFL` > `FeathersUI` toolchain to create fun audio apps in the browser!
 
   The repository contains sub directories that are `OpenFL` projects. Each project either recreates an original `MDN` **WebAudio** example, or we take a journey into frameworks like `Tonejs` or do raw DSP for example.
 
