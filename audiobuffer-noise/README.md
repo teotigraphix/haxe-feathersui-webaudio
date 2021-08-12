@@ -1,7 +1,7 @@
 # Haxe > OpenFL > FeathersUI > WebAudio :: Audio Analyser
 
 _Example Credit_:
-  * https://mdn.github.io/webaudio-examples/audiobuffer-noise/
+  * https://github.com/mdn/webaudio-examples/tree/master/audio-buffer
 
 ## Live demo
 
