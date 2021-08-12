@@ -7,7 +7,7 @@ _Example Credit_:
 
 A build of the [_audiobuffer-noise_ sample](https://teotigraphix.com/io/web-audio/audiobuffer-noise) is hosted on the TeotiGraphix, LLC website, and it may be viewed in any modern web browser.
 
-![AudioBuffer Noise](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/docs/screenshots/webaudio-audiobuffer-noise.png)
+![AudioBuffer Noise](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/audiobuffer-noise/docs/screenshots/webaudio-audiobuffer-noise.png)
   
 ## Run locally
 
