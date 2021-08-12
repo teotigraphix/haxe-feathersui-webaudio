@@ -16,7 +16,6 @@
 // Author: Michael Schmalle - https://teotigraphix.com
 // teotigraphixllc at gmail dot com
 ////////////////////////////////////////////////////////////////////////////////
-import feathers.skins.ProgrammaticSkin;
 import feathers.controls.Alert;
 import feathers.controls.Application;
 import feathers.controls.AssetLoader;
@@ -31,6 +30,7 @@ import feathers.layout.HorizontalLayoutData;
 import feathers.layout.VerticalLayout;
 import feathers.layout.VerticalLayoutData;
 import feathers.skins.BaseGraphicsPathSkin;
+import feathers.skins.ProgrammaticSkin;
 import feathers.skins.RectangleSkin;
 import feathers.text.TextFormat;
 import js.Browser;
@@ -843,52 +843,5 @@ class SoundEngine {
 		element.setAttribute("src", soundFile);
 		element.setAttribute("crossorigin", "anonymous");
 		return element;
-	}
-}
-
-/**
-	Displays the Feathers UI logo and links to feathersui.com
-**/
-class PoweredByFeathersUI extends LayoutGroup {
-	public function new() {
-		super();
-
-		var hl = new HorizontalLayout();
-		hl.verticalAlign = MIDDLE;
-		layout = hl;
-
-		buttonMode = true;
-		useHandCursor = true;
-		mouseChildren = false;
-
-		var label = new Label();
-		label.text = "Powered by ";
-		addChild(label);
-
-		var icon = new AssetLoader();
-		// <assets id="feathersui-logo" path="assets/img/feathersui-logo.png" embed="false"/>
-		icon.source = "feathersui-logo";
-		icon.height = 16.0;
-		addChild(icon);
-
-		addEventListener(MouseEvent.ROLL_OVER, poweredBy_rollOverHandler);
-		addEventListener(MouseEvent.ROLL_OUT, poweredBy_rollOutHandler);
-		addEventListener(MouseEvent.CLICK, poweredBy_clickHandler);
-	}
-
-	private var callout:TextCallout;
-
-	private function poweredBy_rollOverHandler(event:MouseEvent):Void {
-		callout = TextCallout.show("Learn more at feathersui.com", this, null, false);
-	}
-
-	private function poweredBy_rollOutHandler(event:MouseEvent):Void {
-		if (callout != null) {
-			callout.close();
-		}
-	}
-
-	private function poweredBy_clickHandler(event:MouseEvent):Void {
-		Lib.navigateToURL(new URLRequest("https://feathersui.com/"), "_blank");
 	}
 }
