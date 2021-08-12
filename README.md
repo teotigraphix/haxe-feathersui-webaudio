@@ -10,8 +10,18 @@ _Example Credit_:
 
 ## Audio Projects
 
+### audio-basics
+
   * [Audio Basics](https://github.com/teotigraphix/haxe-feathersui-webaudio/tree/main/audio-basics) - Simple boombox with a playing mp3, volume, pan and play control.
   
 ![Audio Basics](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/audio-basics/docs/screenshots/webaudio-audio-basics.png)
+
+### audiobuffer-noise
+
+  * [AudioBuffer Noise](https://github.com/teotigraphix/haxe-feathersui-webaudio/tree/main/audiobuffer-noise) - Uses the AudioBuffer and AnalyserNode to draw a waveform of random sample noise.
+  
+![AudioBuffer Noise](https://github.com/teotigraphix/haxe-feathersui-webaudio/blob/main/audiobuffer-noise/docs/screenshots/webaudio-audiobuffer-noise.png)
+
+
 
 
