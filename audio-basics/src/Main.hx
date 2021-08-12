@@ -18,11 +18,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 import feathers.controls.Alert;
 import feathers.controls.Application;
-import feathers.controls.AssetLoader;
 import feathers.controls.HSlider;
 import feathers.controls.Label;
 import feathers.controls.LayoutGroup;
-import feathers.controls.TextCallout;
 import feathers.controls.ToggleButton;
 import feathers.core.FeathersControl;
 import feathers.layout.HorizontalLayout;
@@ -42,11 +40,9 @@ import js.html.audio.GainNode;
 import js.html.audio.MediaElementAudioSourceNode;
 import js.html.audio.StereoPannerNode;
 import js.html.audio.StereoPannerOptions;
-import openfl.Lib;
 import openfl.display.LineScaleMode;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
-import openfl.net.URLRequest;
 
 // Editors Note:
 //   This is not how I would write an 'app' with these frameworks, purely demonstration.
