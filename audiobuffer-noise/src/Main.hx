@@ -128,7 +128,7 @@ class Main extends Application {
 		g.clear();
 
 		var bufferLength = _soundEngine.frequencyBinCount;
-		// TODO check MSN if this is a throw away instance
+		// TODO check MDN if this is a throw away instance
 		var dataArray = new Uint8Array(bufferLength);
 
 		// get the waveform time domain data to render on the canvas
@@ -136,13 +136,12 @@ class Main extends Application {
 
 		g.lineStyle(8.0, 0x00FF00);
 
+		var x = 0.0;
 		var heightScale = 1.0;
 		var contentHeight = actualHeight * heightScale;
 
-		var sliceWidth = actualWidth * 1.0 / bufferLength;
+		var sliceWidth = actualWidth * bufferLength;
 
-		bufferLength = cast(bufferLength / 1, Int);
-		var x = 0.0;
 		for (i in 0...bufferLength) {
 			var value = dataArray[i] / 128;
 			var y = (value * contentHeight / 2.0);
