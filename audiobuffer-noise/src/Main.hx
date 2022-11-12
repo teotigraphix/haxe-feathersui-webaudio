@@ -35,6 +35,9 @@ import lime.utils.UInt8Array;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
 
+// [audio-buffer-noise]
+// Checked against FeathersUI v1.0.0
+
 /**
 	Translated with love;
 	@see https://mdn.github.io/webaudio-examples/audio-buffer/

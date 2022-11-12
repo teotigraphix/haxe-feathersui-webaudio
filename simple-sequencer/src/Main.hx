@@ -25,6 +25,9 @@ import js.html.audio.AudioContext;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
 
+// [simple-sequencer]
+// Checked against FeathersUI v1.0.0
+
 class Main extends Application {
 	//-----------------------------------------------------------------------------
 	// Private :: Variables

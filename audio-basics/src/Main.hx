@@ -51,6 +51,7 @@ import openfl.events.MouseEvent;
 //   The ComponentFactory serves as a Theme basically, and the constants are for ease
 //   of demonstration.
 
+// [audio-basics]
 // Checked against FeathersUI v1.0.0
 
 /**

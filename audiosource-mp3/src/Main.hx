@@ -35,6 +35,9 @@ import js.lib.Uint8Array;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
 
+// [audio-source-mp3]
+// Checked against FeathersUI v1.0.0
+
 // TODO Need a simple dynamic loop so BG animates from 0..1 alpha
 // TODO Play control stop, stops and resets audio
 class Main extends Application {
