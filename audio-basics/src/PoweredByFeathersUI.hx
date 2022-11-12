@@ -35,6 +35,10 @@ class PoweredByFeathersUI extends LayoutGroup {
 		icon.height = 16.0;
 		addChild(icon);
 
+		var label = new Label();
+		label.text = "v1.0.0";
+		addChild(label);
+
 		addEventListener(MouseEvent.ROLL_OVER, poweredBy_rollOverHandler);
 		addEventListener(MouseEvent.ROLL_OUT, poweredBy_rollOutHandler);
 		addEventListener(MouseEvent.CLICK, poweredBy_clickHandler);
