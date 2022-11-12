@@ -11,6 +11,8 @@ import feathers.controls.LayoutGroup;
 
 /**
 	Displays the Feathers UI logo and links to feathersui.com
+
+	Checked against FeathersUI v1.0.0.
 **/
 class PoweredByFeathersUI extends LayoutGroup {
 	public function new() {

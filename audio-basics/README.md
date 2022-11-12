@@ -4,6 +4,8 @@ _Example Credit_:
   * https://mdn.github.io/webaudio-examples/audio-basics/
   * https://github.com/mdn/webaudio-examples/audio-basics
 
+_Checked against FeathersUI v1.0.0_ - Nov-12-2022
+
 ## Live demo
 
 A build of the [_audio-basics_ sample](https://teotigraphix.com/io/web-audio/audio-basics) is hosted on the TeotiGraphix, LLC website, and it may be viewed in any modern web browser.
