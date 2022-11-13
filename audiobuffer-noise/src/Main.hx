@@ -1,23 +1,14 @@
 package;
 
-////////////////////////////////////////////////////////////////////////////////
-// Copyright 2021 Michael Schmalle - Teoti Graphix, LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-// http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License
-//
-// Author: Michael Schmalle - https://teotigraphix.com
-// teotigraphixllc at gmail dot com
-////////////////////////////////////////////////////////////////////////////////
+/*
+	[audio-buffer-noise] Checked against FeathersUI v1.0.0
+
+	Copyright 2022 Teoti Graphix, LLC. All Rights Reserved.
+	Author: Michael Schmalle - https://teotigraphix.com
+
+	This program is free software. You can redistribute and/or modify it in
+	accordance with the terms of the accompanying license agreement.
+ */
 import feathers.controls.Application;
 import feathers.controls.Button;
 import feathers.controls.LayoutGroup;
@@ -35,9 +26,6 @@ import lime.utils.UInt8Array;
 import openfl.events.Event;
 import openfl.events.MouseEvent;
 
-// [audio-buffer-noise]
-// Checked against FeathersUI v1.0.0
-
 /**
 	Translated with love;
 	@see https://mdn.github.io/webaudio-examples/audio-buffer/
@@ -51,6 +39,18 @@ class Main extends Application {
 	private var playControl:Button;
 	private var canavs:LayoutGroup;
 	private var poweredByFeathersUI:PoweredByFeathersUI;
+
+	//-----------------------------------------------------------------------------
+	// API :: Properties
+	//-----------------------------------------------------------------------------
+	//-----------------------------------
+	// waveformHeightScale
+	//-----------------------------------
+
+	/**
+		The waveform scale relative to the actualHeight.
+	 */
+	public var waveformHeightScale(default, default):Float = 0.9;
 
 	//-----------------------------------------------------------------------------
 	// Constructor
@@ -140,14 +140,14 @@ class Main extends Application {
 		g.lineStyle(8.0, 0x00FF00);
 
 		var x = 0.0;
-		var heightScale = 1.0;
-		var contentHeight = actualHeight * heightScale;
+		var contentHeight = actualHeight * waveformHeightScale;
+		var baseY = (actualHeight - contentHeight) / 2.0;
 
-		var sliceWidth = actualWidth * bufferLength;
+		var sliceWidth = actualWidth / bufferLength;
 
 		for (i in 0...bufferLength) {
 			var value = dataArray[i] / 128;
-			var y = (value * contentHeight / 2.0);
+			var y = baseY + (value * contentHeight / 2.0);
 
 			if (i == 0) {
 				g.moveTo(x, y);
@@ -165,7 +165,7 @@ class Main extends Application {
 		var x = 0.0;
 		for (i in 0...bufferLength) {
 			var value = dataArray[i] / 128;
-			var y = (value * contentHeight / 2.0);
+			var y = baseY + (value * contentHeight / 2.0);
 
 			if (i == 0) {
 				g.moveTo(x, y);
